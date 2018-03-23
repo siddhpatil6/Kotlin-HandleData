@@ -1,8 +1,8 @@
 # Kotlin-HandleData
-# How to Handle Data when screen rotates?
+# How to Handle Data when screen rotation?
 
-There are three ways you can do it
-1. If Your app is based on one orientation than mention that in manifest file with activity attributes
+# Lock The Screen
+ If Your app is based on one orientation than mention that in manifest file with activity attributes
 `<activity android:name=".HandleDataActivity"`
             `android:screenOrientation="portrait">` // or landscape
             
@@ -25,7 +25,14 @@ Saving and restoring the data works using two Activity lifecycle methods called 
 
 To save the state information override onSaveInstanceState() method and add key-value pairs to the Bundle object that is saved in the event that your activity is destroyed unexpectedly. This method gets called before onStop().
 
+# Handle AsyncTask
+When AsyncTask is running without changing the screen orientation then it will start and finish its work normally. But problems begin to appear when the device orientation is changed while the AsyncTask is in the middle of the work.
 
+The application will crash or java.lang.IllegalArgumentException i.e. View not attached to window manager will be thrown or Activity has leaked window.
+
+To resolve this problem one option is to use IntentService along with BroadCastReceiver to deliver result.
+
+Another option is to run the AsyncTask inside worker Fragment. As explained above using fragments is the cleanest way to handle configuration changes because Fragment has the ability to retain their instances simply by calling setRetainInstance(true) in one of its callback methods.
 
 
 `override fun onSaveInstanceState(outState: Bundle?) `
