@@ -5,6 +5,8 @@ There are three ways you can do it
 1. If Your app is based on one orientation than mention that in manifest file with activity attributes
 `<activity android:name=".HandleDataActivity"`
             `android:screenOrientation="portrait">` // or landscape
+            
+# Prevent Activity to recreated
 
 2. If Apps are working on both the orientations, one way is that you can make changes in Android Manifest file to maintain the data with activity attribute.
    `<activity android:name=".HandleDataActivity"`
