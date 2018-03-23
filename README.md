@@ -1,5 +1,5 @@
 # Kotlin-HandleData
-# How to Handle Data when screen rotation?
+# How to Handle Data when screen rotates?
 
 # Lock The Screen
  If Your app is based on one orientation than mention that in manifest file with activity attributes
