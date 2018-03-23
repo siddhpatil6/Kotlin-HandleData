@@ -19,7 +19,15 @@ There are three ways you can do it
 
 # Save basic state
 ### On Saved instance state method, here we saved data before destroy method get called
- 
+ This is the most common situation to save the basic data of your Activity or Fragment during orientation change. You can save Primitive data such as String, Boolean, Integers or Parcelable objects in a Bundle during the orientation change and read the same data when Activity recreated.
+
+Saving and restoring the data works using two Activity lifecycle methods called onSaveInstanceState() and onRestoreInstanceState().
+
+To save the state information override onSaveInstanceState() method and add key-value pairs to the Bundle object that is saved in the event that your activity is destroyed unexpectedly. This method gets called before onStop().
+
+
+
+
 `override fun onSaveInstanceState(outState: Bundle?) `
 
 `{`
@@ -35,6 +43,8 @@ There are three ways you can do it
 
 
 ### on restore instance state method, it retrieves data from the bundle
+
+To recover your saved state from the Bundle override onRestoreInstanceState() method. This is called after onStart() and before onResume().
 
 `override fun onRestoreInstanceState(savedInstanceState: Bundle?) `
 `{`
