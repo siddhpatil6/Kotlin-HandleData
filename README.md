@@ -32,13 +32,4 @@ There are three ways you can do it
 
 ### on restore instance state method, it retrieves data from the bundle
 
-`override fun onSaveInstanceState(outState: Bundle?) `
 
-`{`
-
-        `super.onSaveInstanceState(outState)`
-
-        `Toast.makeText(this,"onSaveInstanceState Method Called",Toast.LENGTH_LONG).show()`
-        `outState?.putString("name",""+etName?.text.toString()+" "+etMiddleName?.text.toString()+" "+etLastName?.text.toString())`
-
-`}`
