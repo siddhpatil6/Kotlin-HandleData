@@ -2,7 +2,7 @@
 # How to Handle Data when screen rotates?
 
 There are three ways you can do it
-1. If Your apps is based on one orientation than mention that in manifest file with activity attributes
+1. If Your app is based on one orientation than mention that in manifest file with activity attributes
 `<activity android:name=".HandleDataActivity"`
             `android:screenOrientation="portrait">` // or landscape
 
@@ -10,7 +10,7 @@ There are three ways you can do it
    `<activity android:name=".HandleDataActivity"`
             `android:configChanges="orientation|screenSize">`
 
-3. It can be done by coding using two methods which are used in activity cycle when screen rotates
+3. It can be done by coding using two methods which are used in activity life cycle when screen rotates
 * onSaveInstanceState
 * onRestoreInstanceState
 
