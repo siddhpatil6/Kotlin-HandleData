@@ -16,6 +16,8 @@ There are three ways you can do it
 * onSaveInstanceState
 * onRestoreInstanceState
 
+
+# Save basic state
 ### On Saved instance state method, here we saved data before destroy method get called
  
 `override fun onSaveInstanceState(outState: Bundle?) `
